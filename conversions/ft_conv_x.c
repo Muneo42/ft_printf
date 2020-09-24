@@ -6,13 +6,13 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:39:47 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:00:59 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:14:50 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	    ft_conv_x(t_printf *st_arg, unsigned int x)
+void	ft_conv_x(t_printf *st_arg, unsigned int x)
 {
 	char	*temp;
 	char	*d_temp;

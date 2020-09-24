@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 14:48:23 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:17:54 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:26:26 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	int	counter;
+	va_list	args;
+	int		counter;
 
 	counter = 0;
 	va_start(args, str);

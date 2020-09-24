@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 15:45:44 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:42:20 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:21:58 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_atoi_tester(int i, const char *str)
 	return (i);
 }
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int				i;
 	unsigned int	final;

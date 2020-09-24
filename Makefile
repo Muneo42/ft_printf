@@ -6,13 +6,13 @@
 #    By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/02 15:52:05 by jopaning          #+#    #+#              #
-#    Updated: 2020/09/03 14:40:49 by jopaning         ###   ########.fr        #
+#    Updated: 2020/09/24 14:03:48 by jopaning         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC_FILES = ft_printf.c \
+SRC = ft_printf.c \
 		others/ft_put_ct.c \
 		others/ft_verif_conv.c \
 		others/ft_args.c \
@@ -39,18 +39,24 @@ SRC_FILES = ft_printf.c \
 		libft/ft_tolower.c \
 		libft/ft_itoa_base.c \
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+FLAGS = -Wall -Wextra -Werror
 
-$(NAME) : $(OBJ_FILES)
-	ar rc $(NAME) $?
+CC = gcc $(FLAGS)
 
-%.o: %.c
-	gcc -Wall -Wextra -Werror -I ft_printf.h -o $@ -c $<
+all : $(NAME)
+
+HEADER = ft_printf.h
+
+$(NAME) : $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
+.%co: .%.c
+	$(CC) -c $(SRC)
 
 clean:
-	rm -f $(OBJ_FILES)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

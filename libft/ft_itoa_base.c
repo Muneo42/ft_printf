@@ -6,13 +6,13 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:03:14 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:21:18 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:22:53 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int		ft_itoa_counter(int n)
+static int	ft_itoa_counter(int n)
 {
 	int	counter;
 
@@ -27,7 +27,7 @@ static int		ft_itoa_counter(int n)
 	return (counter);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		length;
 	char	*return_s;
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	return (return_s);
 }
 
-char	*ft_itoa_base(size_t value, size_t base)
+char		*ft_itoa_base(size_t value, size_t base)
 {
 	char		*nbr;
 	int			i;

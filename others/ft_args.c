@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:07:33 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/09 16:34:02 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/24 13:21:10 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int		ft_pass(t_printf *st_arg, char c)
 	return (0);
 }
 
-static int		ft_counter_adder(const char **format) 
+static int		ft_counter_adder(const char **format)
 {
 	int		i;
 	char	*temp;
@@ -50,14 +50,14 @@ static t_printf	*ft_struct_maker(const char *format)
 	st_arg->width = -1;
 	st_arg->precision = -1;
 	st_arg->c_conversion = '\0';
-	st_arg->arg_counter = ft_counter_adder(&format); 
+	st_arg->arg_counter = ft_counter_adder(&format);
 	st_arg->format_cp = ft_strndup(format, st_arg->arg_counter);
 	st_arg->st_counter = 0;
 	st_arg->cp_pointer = st_arg->format_cp;
 	return (st_arg);
 }
 
-static void		ft_flag_tester(t_printf *st_arg) 
+static void		ft_flag_tester(t_printf *st_arg)
 {
 	int	i;
 
@@ -76,32 +76,32 @@ static void		ft_flag_tester(t_printf *st_arg)
 			st_arg->flag_star_p = 1;
 		i++;
 	}
-	if (st_arg->flag_dot == 1 || st_arg->flag_minus == 1) 
+	if (st_arg->flag_dot == 1 || st_arg->flag_minus == 1)
 		st_arg->flag_zero = 0;
 }
 
 void			printf_arg(const char **format, va_list args, int *counter)
 {
-	t_printf	*st_arg; 
+	t_printf	*st_arg;
 
-	st_arg = ft_struct_maker(*format + 1); 
-	ft_flag_tester(st_arg); 
-	while (*(st_arg->format_cp) == '-' || *(st_arg->format_cp) == '0') 
+	st_arg = ft_struct_maker(*format + 1);
+	ft_flag_tester(st_arg);
+	while (*(st_arg->format_cp) == '-' || *(st_arg->format_cp) == '0')
 		st_arg->format_cp++;
-	if (st_arg->flag_star_w == 1) 
+	if (st_arg->flag_star_w == 1)
 		st_arg->width = va_arg(args, int);
 	else
-		st_arg->width = ft_atoi(st_arg->format_cp); 
+		st_arg->width = ft_atoi(st_arg->format_cp);
 	if (st_arg->flag_star_p == 1)
 		st_arg->precision = va_arg(args, int);
 	while (ft_isdigit(*(st_arg->format_cp)) || *(st_arg->format_cp) == '*')
 		st_arg->format_cp++;
 	if (*(st_arg->format_cp) == '.' && st_arg->flag_star_p == 0)
 		st_arg->precision = ft_atoi(++st_arg->format_cp);
-	while (ft_pass(st_arg, *(st_arg->format_cp)) ||
-			ft_isdigit(*st_arg->format_cp)) 
+	while (ft_pass(st_arg, *(st_arg->format_cp))
+			|| ft_isdigit(*st_arg->format_cp))
 		st_arg->format_cp++;
-	st_arg->c_conversion = *(st_arg->format_cp); 
+	st_arg->c_conversion = *(st_arg->format_cp);
 	ft_printer(st_arg, args);
 	*format = *format + st_arg->arg_counter + 1;
 	*counter = *counter + st_arg->st_counter;
