@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:35:51 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:32:57 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/25 11:25:52 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_conv_u(t_printf *st_arg, unsigned int u)
 			ft_conv_s(st_arg, d_temp);
 		else
 		{
-			if ((int)u < 0)
+			if (u < 0)
 			{
 				free(d_temp);
 				d_temp = ft_itoa_base(-u, 10);

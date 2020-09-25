@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 16:02:55 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:14:33 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:02:01 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_precis(t_printf *st_arg, char *d_temp, int d)
 	len = ft_strlen(d_temp);
 	temp = ft_strnew(st_arg->precision + 1);
 	pt = temp;
-	if (d < 0)
+	if (d < 0 && !(st_arg->c_conversion == 'u' || st_arg->c_conversion == 'x'
+		|| st_arg->c_conversion == 'X'))
 	{
 		*temp = '-';
 		temp++;

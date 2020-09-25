@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:07:33 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/24 13:21:10 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/25 12:11:11 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ static int		ft_pass(t_printf *st_arg, char c)
 {
 	if (st_arg->width < -1)
 		st_arg->flag_zero = 0;
+	if (st_arg->width < 0 && (st_arg->precision > 0
+		|| st_arg->flag_star_p == 0))
+	{
+		st_arg->flag_minus = 1;
+		st_arg->width = -st_arg->width;
+	}
 	if (c == '*' || c == '.' || c == '-' || c == ' ')
 		return (1);
 	return (0);
