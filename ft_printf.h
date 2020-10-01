@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 14:53:38 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/30 01:06:58 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:08:57 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			ft_conv_x(t_printf *st_arg, unsigned int x);
 void			ft_conv_c(t_printf *st_arg, char c);
 void			ft_conv_s(t_printf *st_arg, char *s);
 void			ft_conv_p(t_printf *st_arg, unsigned long long p);
+void			ft_conv_verif(t_printf *st_arg, char *d_temp);
 void			ft_conv_d(t_printf *st_arg, int d);
 void			ft_putstr_fd(char const *str, int fd);
 void			ft_putchar_fd(char c, int fd);
