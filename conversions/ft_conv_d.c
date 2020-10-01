@@ -6,13 +6,13 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:40:49 by jopaning          #+#    #+#             */
-/*   Updated: 2020/10/01 11:17:27 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:21:19 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	ft_tester(t_printf *st_arg, int d)
+static int		ft_tester(t_printf *st_arg, int d)
 {
 	int		len;
 	char	*tmp;
@@ -30,7 +30,7 @@ static int	ft_tester(t_printf *st_arg, int d)
 	return (0);
 }
 
-void		ft_conv_d_ext(t_printf *st_arg, char *d_temp, int d)
+static void		ft_conv_d_ext(t_printf *st_arg, char *d_temp, int d)
 {
 	if (st_arg->precision >= 0)
 		st_arg->flag_zero = 0;
@@ -44,7 +44,7 @@ void		ft_conv_d_ext(t_printf *st_arg, char *d_temp, int d)
 	ft_conv_s(st_arg, d_temp);
 }
 
-void		ft_conv_d(t_printf *st_arg, int d)
+void			ft_conv_d(t_printf *st_arg, int d)
 {
 	char	*temp;
 	char	*d_temp;
