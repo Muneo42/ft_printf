@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:35:51 by jopaning          #+#    #+#             */
-/*   Updated: 2020/10/01 11:09:44 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:11:14 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_conv_verif(t_printf *st_arg, char *d_temp)
 {
-	if (st_arg->precision >= 0) 
+	if (st_arg->precision >= 0)
 		st_arg->flag_zero = 0;
 	ft_conv_s(st_arg, d_temp);
 }

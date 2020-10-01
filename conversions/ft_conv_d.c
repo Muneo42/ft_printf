@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:40:49 by jopaning          #+#    #+#             */
-/*   Updated: 2020/10/01 10:41:28 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:16:18 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ static int	ft_tester(t_printf *st_arg, int d)
 	return (0);
 }
 
+void		ft_conv_d_ext(t_printf *st_arg, char *d_temp, int d)
+{
+	if (st_arg->precision >= 0) 
+		st_arg->flag_zero = 0;
+	if (d < 0 && st_arg->width > (int)ft_strlen(d_temp) && d != -2147483648
+		&& st_arg->flag_zero)
+	{
+		ft_putchar_ct(st_arg, '-');
+		d_temp = ft_itoa(-d);
+		st_arg->width--;
+	}
+	ft_conv_s(st_arg, d_temp);
+}
+
 void		ft_conv_d(t_printf *st_arg, int d)
 {
 	char	*temp;
@@ -46,18 +60,7 @@ void		ft_conv_d(t_printf *st_arg, int d)
 	else
 		d_temp = ft_itoa(d);
 	if (st_arg->precision < (int)ft_strlen(d_temp))
-	{
-		if (st_arg->precision >= 0) 
-			st_arg->flag_zero = 0;
-		if (d < 0 && st_arg->width > (int)ft_strlen(d_temp) && d != -2147483648
-			&& st_arg->flag_zero)
-		{
-			ft_putchar_ct(st_arg, '-');
-			d_temp = ft_itoa(-d);
-			st_arg->width--;
-		}
-		ft_conv_s(st_arg, d_temp);
-	}
+		ft_conv_d_ext(st_arg, d_temp, d);
 	else
 	{
 		if (*d_temp == '-')
