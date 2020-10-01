@@ -84,7 +84,7 @@ static void		ft_flag_tester(t_printf *st_arg)
 	}
 	if (st_arg->flag_dot == 1 || st_arg->flag_minus == 1)
 	{
-		if(st_arg->flag_zero == 1 && st_arg->precision <= -1)
+		if (st_arg->flag_zero == 1 && st_arg->precision <= -1)
 			st_arg->flag_zero = 2;
 		else
 			st_arg->flag_zero = 0;
