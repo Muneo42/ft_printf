@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:40:49 by jopaning          #+#    #+#             */
-/*   Updated: 2020/10/01 11:16:18 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:17:27 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_tester(t_printf *st_arg, int d)
 
 void		ft_conv_d_ext(t_printf *st_arg, char *d_temp, int d)
 {
-	if (st_arg->precision >= 0) 
+	if (st_arg->precision >= 0)
 		st_arg->flag_zero = 0;
 	if (d < 0 && st_arg->width > (int)ft_strlen(d_temp) && d != -2147483648
 		&& st_arg->flag_zero)
