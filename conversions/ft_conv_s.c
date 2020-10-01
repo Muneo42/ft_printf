@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:40:33 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/03 14:01:39 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/30 16:50:29 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		ft_conv_s(t_printf *st_arg, char *s)
 			ft_putstr_ct(st_arg, s);
 		while (len++ < st_arg->width)
 		{
-			if (st_arg->flag_zero == 1 && st_arg->flag_minus == 0)
+			if (st_arg->flag_zero >= 1 && st_arg->flag_minus == 0 && st_arg->precision)
 				ft_putchar_ct(st_arg, '0');
 			else
 				ft_putchar_ct(st_arg, ' ');

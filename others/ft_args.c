@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:07:33 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/25 12:11:11 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/30 14:31:45 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,12 @@ static void		ft_flag_tester(t_printf *st_arg)
 		i++;
 	}
 	if (st_arg->flag_dot == 1 || st_arg->flag_minus == 1)
-		st_arg->flag_zero = 0;
+	{
+		if(st_arg->flag_zero == 1 && st_arg->precision <= -1)
+			st_arg->flag_zero = 2;
+		else
+			st_arg->flag_zero = 0;
+	}
 }
 
 void			printf_arg(const char **format, va_list args, int *counter)

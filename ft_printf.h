@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 14:53:38 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/24 13:32:48 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/30 01:06:58 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct	s_printf
 {

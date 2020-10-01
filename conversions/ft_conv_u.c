@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 13:35:51 by jopaning          #+#    #+#             */
-/*   Updated: 2020/09/25 11:25:52 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/09/30 16:40:56 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ void	ft_conv_u(t_printf *st_arg, unsigned int u)
 	else
 	{
 		if (st_arg->precision < (int)ft_strlen(d_temp))
+		{
+			if (st_arg->precision >= 0) 
+				st_arg->flag_zero = 0;
 			ft_conv_s(st_arg, d_temp);
+		}
 		else
 		{
 			if (u < 0)
@@ -33,6 +37,7 @@ void	ft_conv_u(t_printf *st_arg, unsigned int u)
 				u = -u;
 			}
 			temp = ft_precis(st_arg, d_temp, u);
+			st_arg->flag_zero = 0;
 			ft_conv_s(st_arg, temp);
 			free(temp);
 		}
